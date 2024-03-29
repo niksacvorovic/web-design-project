@@ -1,0 +1,48 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient( to bottom left, violet, blue);
+}
+
+header{
+    font-family:"Oswald";
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#main{
+    font-family:"Oswald";
+    margin-left:10%;
+    margin-right:10%;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.organiser{
+    width:100%;
+}
+
+.logo1{
+    width: 10em;
+    float:left;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+
+.logo2{
+    width:10em;
+    float:right;
+    margin-top:2em;
+    margin-bottom:2em;
+}
+
+ul{
+    display:inline-block;
+    list-style-type:none;
+}
+
+.list2{
+    margin-left:50%;
+}
