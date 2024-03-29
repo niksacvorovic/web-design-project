@@ -27,7 +27,7 @@ header{
 }
 
 .organiser2{
-    width:50%;
+    width:51%;
     float:right;
 }
 
@@ -36,10 +36,12 @@ header{
     display:inline-block;
     margin-top:2em;
     margin-bottom:2em;
+    margin-right:2em;
 }
 
 ul{
     display:inline-block;
     list-style-type:none;
     font-weight: bold;
+    padding-left:0px;
 }
