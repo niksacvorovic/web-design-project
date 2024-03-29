@@ -4,6 +4,7 @@ html{
 
 body{
     background-image: linear-gradient( to bottom left, violet, blue);
+    background-attachment: fixed;
 }
 
 header{
@@ -20,20 +21,19 @@ header{
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.organiser{
-    width:100%;
-}
-
-.logo1{
-    width: 10em;
+.organiser1{
+    width:51%;
     float:left;
-    margin-top:2em;
-    margin-bottom:2em;
 }
 
-.logo2{
-    width:10em;
+.organiser2{
+    width:50%;
     float:right;
+}
+
+.logo{
+    width: 10em;
+    display:inline-block;
     margin-top:2em;
     margin-bottom:2em;
 }
@@ -41,8 +41,5 @@ header{
 ul{
     display:inline-block;
     list-style-type:none;
-}
-
-.list2{
-    margin-left:50%;
+    font-weight: bold;
 }
