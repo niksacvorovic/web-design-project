@@ -22,12 +22,3 @@ ul{
     font-weight: bold;
     padding-left:0px;
 }
-
-a{
-    color:chartreuse;
-    text-decoration: none;
-}
-
-a:hover{
-    color:orange;
-}

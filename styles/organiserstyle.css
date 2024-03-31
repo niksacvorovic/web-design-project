@@ -22,12 +22,3 @@ table, td, th{
     padding-bottom:1vh;
     text-align: center;
 }
-
-a{
-    color:darkgreen;
-    text-decoration: none;
-}
-
-a:hover{
-    color:darkred;
-}

@@ -23,6 +23,7 @@ h1{
     width:50%;
     float:right;
     padding:0px;
+    font-weight: bold;
 }
 
 .sidebar{
@@ -36,4 +37,13 @@ h1{
     margin-right:10%;
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+a{
+    color:chartreuse;
+    text-decoration: none;
+}
+
+a:hover{
+    color:orange;
 }
