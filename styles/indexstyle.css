@@ -1,26 +1,3 @@
-html{
-    height: 100%;
-}
-
-body{
-    background-image: linear-gradient( to bottom left, violet, blue);
-    background-attachment: fixed;
-}
-
-header{
-    font-family:"Oswald";
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-#main{
-    font-family:"Oswald";
-    margin-left:10%;
-    margin-right:10%;
-    padding: 1em;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
 .organiser1{
     width:51%;
     float:left;

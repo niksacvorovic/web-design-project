@@ -4,6 +4,7 @@
         <title>BeoArt Fest</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../styles/basestyle.css" rel="stylesheet"/>
         <link href="../styles/organiserstyle.css" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,12 +12,17 @@
     </head>
     <body>
         <header>
-            <h1>SIIT UP</h1>
+            <h1 id="name">SIIT UP</h1>
+            <ul id="options">
+                <li class="sidebar">Uređenje organizatora</li>
+                <li class="sidebar">Uređenje korisnika</li>
+                <li class="sidebar">Prijava/Registracija</li>
+            </ul>
             <hr/>
             <h2>Vaš partner za organizovanje najboljih festivala!</h2>
         </header>
         <div id="main">
-            <img id="logo" src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoArt Fest logo"/>
+            <img src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoArt Fest logo"/>
             <div id="text">
                 <h2>BeoArt Fest</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -27,7 +33,7 @@
                    anim id est laborum.</p>
             </div>
             <h2>Festivali organizatora BeoArt Fest:</h2>
-            <table align="center">
+            <table>
                 <thead>
                     <tr>
                         <th>Naziv festivala</th><th>Datum održavanja</th><th>Tip festivala</th><th>Stranica festivala</th>
