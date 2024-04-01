@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sr">
+    <head>
+        <title>Uređenje korisnika</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../styles/basestyle.css" rel="stylesheet"/>
+        <link href="../styles/formstyle.css" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1 id="name"><a id="mainpage" href="index.html">SIIT UP</a></h1>
+            <ul id="options">
+                <li class="sidebar"><a href="../pages/adminorgs.html">Uređenje organizatora</a></li>
+                <li class="sidebar"><a href="../pages/adminusers.html">Uređenje korisnika</a></li>
+                <li class="sidebar">Prijava/Registracija</li>
+            </ul>
+            <hr/>
+            <h2>Vaš partner za organizovanje najboljih festivala!</h2>
+        </header>
+        <div id="main">
+            <h2>Izmena korisnika</h2>
+            <form>
+                <div class="forms">
+                    <label for="username">Korisničko ime: </label>
+                    <input type="text" name="username" id="username" value="petar_p" readonly>
+                    <br/>
+                    <label for="password">Lozinka: </label>
+                    <input type="text" name="password" id="password">
+                    <br/>
+                    <label for="name">Ime: </label>
+                    <input type="text" name="name" id="name">
+                    <br/>
+                    <label for="lastname">Prezime: </label> 
+                    <input type="text" name="lastname" id="lastname">
+                    <br/>
+                </div>
+                <div class="forms">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email">
+                    <br/>
+                    <label for="date">Datum rođenja: </label>
+                    <input type="date" name="date" id="date">
+                    <br/>
+                    <label for="address">Adresa: </label>
+                    <input type="text" name="address" id="date">
+                    <br/>
+                    <label for="number">Broj telefona: </label>
+                    <input type="text" name="number" id="number">
+                    <br/>
+                    <label for="job">Zanimanje: </label>
+                    <input type="text" name="job" id="job">
+                    <br/>
+                </div>
+                <input type="submit" value="Primenite">
+            </form>
+        </div>
+    </body>
+</html>

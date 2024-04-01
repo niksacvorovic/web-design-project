@@ -1,11 +1,10 @@
-.organiser1{
+.organiser{
+    display:block;
     width:51%;
-    float:left;
 }
 
-.organiser2{
-    width:51%;
-    float:right;
+.organiser:nth-child(odd){
+    margin-left: 51%;
 }
 
 .logo{
