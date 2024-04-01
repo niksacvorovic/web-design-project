@@ -1,0 +1,10 @@
+thead{
+    text-align: left;
+}
+
+table, th, td{
+    border: 1px solid chartreuse;
+    border-collapse: collapse;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
