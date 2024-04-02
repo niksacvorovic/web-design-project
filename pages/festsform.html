@@ -5,7 +5,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="../styles/basestyle.css" rel="stylesheet"/>
-        <link href="../styles/indexstyle.css" rel="stylesheet"/>
+        <link href="../styles/formstyle.css" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
         <header>
             <h1 id="name"><a id="mainpage" href="index.html">SIIT UP</a></h1>
             <ul id="options">
-                <li class="sidebar"><a href="../pages/adminorgs.html">Uređenje organizatora</a></li>
-                <li class="sidebar"><a href="../pages/adminusers.html">Uređenje korisnika</a></li>
+                <li class="sidebar"><a class="opt" href="../pages/adminorgs.html">Uređenje organizatora</a></li>
+                <li class="sidebar"><a class="opt" href="../pages/adminusers.html">Uređenje korisnika</a></li>
                 <li class="sidebar">Prijava/Registracija</li>
             </ul>
             <hr/>
@@ -23,6 +23,35 @@
         </header>
         <div id="main">
             <h2>Uređenje festivala korisnika BeoArt Fest</h2>
+            <form>
+                <div class="forms">
+                    <label for="name">Naziv festivala: </label>
+                    <input type="text" name="name" id="name" value="Festival Ostrvske Muzike" read>
+                    <br/>
+                    <label for="desc">Opis: </label>
+                    <br/>
+                    <textarea name="desc" id="desc"></textarea>
+                    <br/>
+                    <label for="images">Slike: </label> 
+                    <input type="file" name="images" id="images">
+                    <br/>
+                </div>
+                <div class="forms">
+                    <label for="type">Email: </label>
+                    <input type="text" name="type" id="type">
+                    <br/>
+                    <label for="transport">Prevoz: </label>
+                    <input type="text" name="transport" id="transport">
+                    <br/>
+                    <label for="price">Cena: </label>
+                    <input type="text" name="price" id="price">
+                    <br/>
+                    <label for="max">Maksimalno osoba: </label>
+                    <input type="text" name="max" id="max">
+                    <br/>
+                </div>
+                <input type="submit" value="Primenite">
+
         </div>
     </body>
 </html>
