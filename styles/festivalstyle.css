@@ -1,12 +1,29 @@
 .galleryitem{
     width:30%;
-    height:30vh;
-    margin:2vh;
+    height:30vmin;
+    margin:1%;
     display:inline-block;
-    object-fit: cover;
     justify-content: center;
 }
+
+@media only screen and (max-width:1280px){
+    .galleryitem{
+        width:40%;
+        margin: 2%;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .galleryitem{
+        width: 90%;
+        margin: 2%;
+    }
+}
+
 img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
     height:100%;
 }
 
