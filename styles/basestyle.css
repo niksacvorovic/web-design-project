@@ -5,10 +5,10 @@ html{
 body{
     background-image: linear-gradient( to bottom left, violet, blue);
     background-attachment: fixed;
+    font-family:"Oswald";
 }
 
 header{
-    font-family:"Oswald";
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -41,7 +41,6 @@ h1{
 }
 
 #main{
-    font-family:"Oswald";
     margin-left:10%;
     margin-right:10%;
     padding: 1em;

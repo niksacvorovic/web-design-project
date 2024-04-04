@@ -1,6 +1,13 @@
-img{
-    height: 30vh;
+.galleryitem{
+    width:30%;
+    height:30vh;
+    margin:2vh;
     display:inline-block;
+    object-fit: cover;
+    justify-content: center;
+}
+img{
+    height:100%;
 }
 
 #info{
