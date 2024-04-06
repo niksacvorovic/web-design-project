@@ -1,10 +1,16 @@
 .organiser{
-    display:block;
-    width:51%;
+    width:100%;
 }
 
-.organiser:nth-child(odd){
-    margin-left: 51%;
+@media only screen and (min-width:430px){
+    .organiser{
+        display:block;
+        width:51%;
+    }
+    
+    .organiser:nth-child(odd){
+        margin-left: 51%;
+    }
 }
 
 .logo{
