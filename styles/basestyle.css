@@ -37,6 +37,7 @@ h1{
 }
 
 .sidebar:hover{
+    cursor: pointer;
     background-color: rgba(255, 255, 255, 0.3);
 }
 @media only screen and (max-width:767px){
@@ -86,4 +87,35 @@ button{
     padding-right:2em;
     margin:0;
     margin-top:1em;
+}
+
+#popup{
+    display:none;
+    background-color: rgba(255, 255, 255, 0.7);
+    position:fixed;
+    top:30vh;
+    left:30%;
+    width:30%;
+    height:30vh;
+    padding:5%
+}
+
+.logininput{
+    background-color: white;
+    padding:1vh;
+    border: 0;
+    margin:1em;
+    margin-left:0;
+}
+
+.loginlabel{
+    display:inline-block;
+    width:30%;
+    padding-right:5%;
+    font-size:18px;
+}
+
+input:hover{
+    background-color: lightgray;
+    border:0;
 }

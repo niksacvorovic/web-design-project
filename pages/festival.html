@@ -16,11 +16,23 @@
             <ul id="options">
                 <li class="sidebar adminopt"><a class="opt" href="../pages/adminorgs.html">Uređenje organizatora</a></li>
                 <li class="sidebar adminopt"><a class="opt" href="../pages/adminusers.html">Uređenje korisnika</a></li>
-                <li class="sidebar">Prijava/Registracija</li>
+                <li class="sidebar" id="login">Prijava/Registracija</li>
             </ul>
             <hr/>
             <h2>Vaš partner za organizovanje najboljih festivala!</h2>
         </header>
+        <div id="popup">
+            <form method="post">
+                <label class="loginlabel" for="username">Korisničko ime:</label>
+                <input class="logininput" type="text" class="login" name="username" id="username">
+                <br/>
+                <label class="loginlabel" for="password">Lozinka:</label>
+                <input class="logininput" type="password" class="login" name="password" id="password">
+                <br/>
+                <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
+                <input type="submit" value="Ulogujte se">
+            </form>
+        </div>
         <div id="main">
             <h2>Festival Ostrvske Muzike</h2>
             <p>Zamislite festival gdje pulsirajući ritmovi i melodije ispunjavaju vazduh na pozadini 
@@ -43,5 +55,6 @@
                 <div class="galleryitem"><img src="https://i.imgur.com/pN3ugei.jpeg" alt="Festival - slike"/></div>
             </div>
         </div>
+        <script src="../scripts/basescript.js"></script>
     </body>
 </html>

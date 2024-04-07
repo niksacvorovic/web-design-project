@@ -8,7 +8,7 @@
         width:51%;
     }
     
-    .organiser:nth-child(odd){
+    .organiser:nth-child(even){
         margin-left: 51%;
     }
 }

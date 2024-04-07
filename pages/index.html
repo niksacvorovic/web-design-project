@@ -16,7 +16,7 @@
             <ul id="options">
                 <li class="sidebar adminopt"><a class="opt" href="../pages/adminorgs.html">Uređenje organizatora</a></li>
                 <li class="sidebar adminopt"><a class="opt" href="../pages/adminusers.html">Uređenje korisnika</a></li>
-                <li class="sidebar">Prijava/Registracija</li>
+                <li class="sidebar" id="login">Prijava/Registracija</li>
             </ul>
             <hr/>
             <h2>Vaš partner za organizovanje najboljih festivala!</h2>
@@ -32,6 +32,18 @@
                 Želite da ostvarite saradnju? Stupite u kontakt sa našim agentima već danas:
             </p>
             <hr/>
+            <div id="popup">
+                <form method="post">
+                    <label class="loginlabel" for="username">Korisničko ime:</label>
+                    <input class="logininput" type="text" class="login" name="username" id="username">
+                    <br/>
+                    <label class="loginlabel" for="password">Lozinka:</label>
+                    <input class="logininput" type="password" class="login" name="password" id="password">
+                    <br/>
+                    <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
+                    <input type="submit" value="Ulogujte se">
+                </form>
+            </div>
             <div class="organiser">
                 <img class="logo" src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoArt Fest Logo"/>
                 <ul class="list">
@@ -77,5 +89,6 @@
                 </ul>
             </div>
         </div>
+        <script src="../scripts/basescript.js"></script>
     </body>
 </html>
