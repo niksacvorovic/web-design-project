@@ -1,6 +1,6 @@
-img{
-    width:30%;
-    float:left;
+#imagediv{
+    width:40%;
+    display:inline-block;
 }
 
 #text{
@@ -21,12 +21,22 @@ table, td, th{
     text-align: center;
 }
 
-@media only screen and (max-width:768px){
+img{
+    display:block;
+    height:12em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width:1024px){
     img{
         display:block;
-        width:60%;
-        margin-left:20%;
-        margin-right:20%;
+        height:7em;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #imagediv{
+        width:100%;
     }
     #text{
         width:100%;
