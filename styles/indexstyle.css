@@ -2,7 +2,7 @@
     width:100%;
 }
 
-@media only screen and (min-width:430px){
+@media only screen and (min-width:500px){
     .organiser{
         display:block;
         width:51%;
@@ -11,14 +11,25 @@
     .organiser:nth-child(even){
         margin-left: 51%;
     }
+    .placeholder{
+        display:inline-block;
+        width:40%;
+    }
+}
+
+@media only screen and (min-width:760px) and (max-width:1024px){
+    .placeholder{
+        display:block;
+    }
 }
 
 .logo{
-    width: 10em;
-    display:inline-block;
+    height: 5em;
+    display:block;
     margin-top:2em;
     margin-bottom:2em;
-    margin-right:2em;
+    margin-left:auto;
+    margin-right:auto;
     border:5px solid white;
 }
 
