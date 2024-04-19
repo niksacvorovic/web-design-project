@@ -1,7 +1,7 @@
 let main = document.getElementById("main");
 const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
 const request = new XMLHttpRequest();
-request.onload = function(){
+request.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         organisers = JSON.parse(request.responseText);
         for(var entity in organisers){
@@ -14,6 +14,7 @@ request.onload = function(){
             div.appendChild(placeholder)
             let image = document.createElement("img");
             image.setAttribute("src", data.logo);
+            image.setAttribute("alt", data.naziv +" Logo")
             image.setAttribute("class", "logo");
             placeholder.appendChild(image);
             let list = document.createElement("ul");
@@ -38,8 +39,11 @@ request.onload = function(){
             list.appendChild(hyper);
             let link = document.createElement("a");
             link.innerHTML = "Stranica organizatora";
-            link.setAttribute("href", "organiser.html?page=" + entity);
+            link.setAttribute("href", "organiser.html?org=" + entity);
             hyper.appendChild(link);
+            let hr = document.createElement("hr");
+            hr.setAttribute("class", "mobileonly");
+            div.appendChild(hr);
             main.appendChild(div);
         }
     }
