@@ -6,69 +6,29 @@ const request2 = new XMLHttpRequest();
 request1.onreadystatechange = function (){
     if (this.readyState == 4 && this.status == 200){
         data = JSON.parse(request1.responseText);
-        let pagetitle = document.getElementsByTagName("title");
-        pagetitle[0].innerHTML = data.naziv;
-        let div = document.createElement("div");
-        let imagediv = document.createElement("div");
-        imagediv.setAttribute("id", "imagediv");
+        let imagediv = document.getElementById("imagediv");
         let image = document.createElement("img");
         image.setAttribute("src", data.logo);
         image.setAttribute("alt", data.naziv + " Logo")
         imagediv.appendChild(image);
-        div.appendChild(imagediv)
-        let text = document.createElement("div");
-        text.setAttribute("id", "text");
-        div.appendChild(text);
-        let title = document.createElement("h2");
-        title.innerHTML = data.naziv
-        text.appendChild(title);
-        let list = document.createElement("ul");
-        list.setAttribute("id", "list")
-        text.appendChild(list);
-        let name = document.createElement("li");
-        name.innerHTML = "Naziv: " + data.naziv;
-        list.appendChild(name);
-        let address = document.createElement("li");
-        address.innerHTML = "Adresa: " + data.adresa;
-        list.appendChild(address);
-        let year = document.createElement("li");
-        year.innerHTML = "Godina osnivanja: " + data.godinaOsnivanja;
-        list.appendChild(year);
-        let contact = document.createElement("li");
-        contact.innerHTML = "Kontakt telefon: " + data.kontaktTelefon;
-        list.appendChild(contact);
-        let email = document.createElement("li");
-        email.innerHTML = "Email: " + data.email;
-        list.appendChild(email);
-        main.appendChild(div);
+        let text = document.getElementById("text");
+        let name = document.createElement("h2");
+        name.innerHTML = data.naziv;
+        text.insertBefore(name, text.children[0]);
+        let list = document.getElementById("list");
+        let info = list.children;
+        info[0].innerHTML = "Naziv: " + data.naziv;
+        info[1].innerHTML = "Adresa: " + data.adresa;
+        info[2].innerHTML = "Godina osnivanja: " + data.godinaOsnivanja;
+        info[3].innerHTML = "Kontakt telefon: " + data.kontaktTelefon;
+        info[4].innerHTML = "Email: " + data.email;
         let subtitle = document.createElement("h2");
         subtitle.innerHTML = "Festivali organizatora " + data.naziv + ":";
-        main.appendChild(subtitle);
+        main.insertBefore(subtitle, main.children[2]);
         request2.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200){
                 tabledata = JSON.parse(request2.responseText);
-                let table = document.createElement("table");
-                main.appendChild(table);
-                let thead = document.createElement("thead");
-                table.appendChild(thead);
-                let headrow = document.createElement("tr");
-                thead.appendChild(headrow);
-                let name = document.createElement("th")
-                name.innerHTML = "Naziv festivala";
-                headrow.appendChild(name)
-                let price = document.createElement("th")
-                price.innerHTML = "Cena aranžmana";
-                price.setAttribute("class", "mobileno");
-                headrow.appendChild(price)
-                let type = document.createElement("th")
-                type.innerHTML = "Tip festivala";
-                type.setAttribute("class", "mobileno");
-                headrow.appendChild(type)
-                let link = document.createElement("th")
-                link.innerHTML = "Stranica festivala";
-                headrow.appendChild(link)
-                let tbody = document.createElement("tbody");
-                table.appendChild(tbody);
+                let tbody = document.getElementById("tbody");
                 for(var festival in tabledata){
                     i = tabledata[festival];
                     let row = document.createElement("tr");
@@ -99,4 +59,3 @@ request1.onreadystatechange = function (){
 }
 request1.open("GET", url + "/organizatoriFestivala/" + params.get("org") + ".json");
 request1.send()
-
