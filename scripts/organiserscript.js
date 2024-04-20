@@ -6,6 +6,8 @@ const request2 = new XMLHttpRequest();
 request1.onreadystatechange = function (){
     if (this.readyState == 4 && this.status == 200){
         data = JSON.parse(request1.responseText);
+        let title = document.getElementsByTagName("title");
+        title[0].innerHTML = data.naziv;
         let imagediv = document.getElementById("imagediv");
         let image = document.createElement("img");
         image.setAttribute("src", data.logo);

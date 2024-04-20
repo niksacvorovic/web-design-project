@@ -1,6 +1,7 @@
 #imagediv{
     width:40%;
     display:inline-block;
+    overflow:hidden;
 }
 
 #text{
@@ -28,7 +29,7 @@ img{
     margin-right: auto;
 }
 
-@media only screen and (max-width:1024px){
+@media only screen and (max-width:768px){
     img{
         display:block;
         height:7em;

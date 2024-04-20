@@ -8,3 +8,7 @@ table, th, td{
     padding-left: 1vh;
     padding-right: 1vh;
 }
+
+td a{
+    cursor:pointer;
+}
