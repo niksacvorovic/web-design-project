@@ -3,14 +3,17 @@ const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
 var params = new URLSearchParams(window.location.search);
 const request1 = new XMLHttpRequest();
 const request2 = new XMLHttpRequest();
-request1.onload = function (){
+request1.onreadystatechange = function (){
     if (this.readyState == 4 && this.status == 200){
         data = JSON.parse(request1.responseText);
+        let pagetitle = document.getElementsByTagName("title");
+        pagetitle[0].innerHTML = data.naziv;
         let div = document.createElement("div");
         let imagediv = document.createElement("div");
         imagediv.setAttribute("id", "imagediv");
         let image = document.createElement("img");
         image.setAttribute("src", data.logo);
+        image.setAttribute("alt", data.naziv + " Logo")
         imagediv.appendChild(image);
         div.appendChild(imagediv)
         let text = document.createElement("div");
@@ -41,9 +44,9 @@ request1.onload = function (){
         let subtitle = document.createElement("h2");
         subtitle.innerHTML = "Festivali organizatora " + data.naziv + ":";
         main.appendChild(subtitle);
-        request2.onload = function() {
+        request2.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200){
-                data = JSON.parse(request2.responseText);
+                tabledata = JSON.parse(request2.responseText);
                 let table = document.createElement("table");
                 main.appendChild(table);
                 let thead = document.createElement("thead");
@@ -66,9 +69,8 @@ request1.onload = function (){
                 headrow.appendChild(link)
                 let tbody = document.createElement("tbody");
                 table.appendChild(tbody);
-                for(var festival in data){
-                    console.log(festival);
-                    i = data[festival];
+                for(var festival in tabledata){
+                    i = tabledata[festival];
                     let row = document.createElement("tr");
                     tbody.appendChild(row);
                     let fest = document.createElement("td");
@@ -85,7 +87,7 @@ request1.onload = function (){
                     let festlink = document.createElement("td");
                     let linktext = document.createElement("a");
                     linktext.innerHTML = "Pogledajte ovde";
-                    linktext.setAttribute("href", "festival.html?page=" + festival);
+                    linktext.setAttribute("href", "festival.html?dict=" + data.festivali + "&fest=" + festival);
                     festlink.appendChild(linktext);
                     row.appendChild(festlink)
                 }
@@ -95,6 +97,6 @@ request1.onload = function (){
         request2.send();
     }
 }
-request1.open("GET", url + "/organizatoriFestivala/" + params.get("page") + ".json");
+request1.open("GET", url + "/organizatoriFestivala/" + params.get("org") + ".json");
 request1.send()
 

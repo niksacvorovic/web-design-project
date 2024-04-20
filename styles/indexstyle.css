@@ -15,6 +15,9 @@
         display:inline-block;
         width:40%;
     }
+    .mobileonly{
+        display:none;
+    }
 }
 
 @media only screen and (min-width:760px) and (max-width:1024px){
