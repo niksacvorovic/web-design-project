@@ -1,4 +1,4 @@
-let main = document.getElementById("main");
+const main = document.getElementById("main");
 const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
 const request = new XMLHttpRequest();
 request.onreadystatechange = function(){

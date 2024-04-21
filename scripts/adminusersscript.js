@@ -1,4 +1,4 @@
-let main = document.getElementById("main");
+const main = document.getElementById("main");
 const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
@@ -9,7 +9,6 @@ request.onreadystatechange = function() {
             userdata = users[values];
             let row = document.createElement("tr");
             let uservalues = [userdata.korisnickoIme, userdata.lozinka, userdata.ime, userdata.prezime, userdata.email, userdata.datumRodjenja, userdata.adresa, userdata.telefon, userdata.zanimanje];
-            console.log(userdata.korisnickoIme)
             for(var value in uservalues){
                 let field = document.createElement("td");
                 field.innerHTML = uservalues[value];

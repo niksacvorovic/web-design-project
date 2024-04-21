@@ -1,6 +1,6 @@
-let main = document.getElementById("main");
+const main = document.getElementById("main");
 const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
-var params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200){
