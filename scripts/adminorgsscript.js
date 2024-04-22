@@ -10,6 +10,9 @@ request.onreadystatechange = function() {
         let arr = [entity.naziv, entity.adresa, entity.godinaOsnivanja, entity.logo, entity.kontaktTelefon, entity.email, entity.festivali];
         for(let i = 0; i < arr.length; i++){
             let field = document.createElement("td");
+            if (i > 0 && i < 6){
+                field.setAttribute("class", "mobileno");
+            }
             if (i == 3){
                 let logo = document.createElement("a");
                 logo.setAttribute("href", arr[i]);

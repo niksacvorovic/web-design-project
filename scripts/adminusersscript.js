@@ -11,6 +11,9 @@ request.onreadystatechange = function() {
             let uservalues = [userdata.korisnickoIme, userdata.lozinka, userdata.ime, userdata.prezime, userdata.email, userdata.datumRodjenja, userdata.adresa, userdata.telefon, userdata.zanimanje];
             for(var value in uservalues){
                 let field = document.createElement("td");
+                if(value != 0){
+                    field.setAttribute("class", "mobileno");
+                }
                 field.innerHTML = uservalues[value];
                 row.appendChild(field);
             }

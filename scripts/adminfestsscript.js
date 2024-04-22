@@ -14,6 +14,9 @@ request.onreadystatechange = function() {
         let arr = [entity.naziv, entity.opis, entity.slike, entity.tip, entity.prevoz, entity.cena, entity.maxOsoba];
         for(let i = 0; i < arr.length; i++){
             let field = document.createElement("td");
+            if (i != 0){
+                field.setAttribute("class", "mobileno");
+            }
             if (i == 2){
                 for(var image in entity.slike){
                     let link = document.createElement("a");
