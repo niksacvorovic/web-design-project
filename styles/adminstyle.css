@@ -2,7 +2,15 @@ thead{
     text-align: left;
 }
 
-table, th, td{
+table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 3px solid chartreuse;
+    border-collapse: collapse;
+}
+
+th, td{
     border: 1px solid chartreuse;
     border-collapse: collapse;
     padding-left: 1vh;
@@ -13,7 +21,7 @@ td a{
     cursor:pointer;
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:550px){
     .mobileno{
         display:none;
     }
