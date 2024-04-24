@@ -16,6 +16,9 @@ request.onreadystatechange = function() {
             let field = document.createElement("td");
             if (i != 0){
                 field.setAttribute("class", "mobileno");
+                if (i == 1){
+                    field.setAttribute("class", "mobileno wrap");
+                }
             }
             if (i == 2){
                 for(var image in entity.slike){
