@@ -24,11 +24,11 @@
         <div id="popup">
             <button id="close">X</button>
             <form method="post">
-                <label class="loginlabel" for="username">Korisničko ime:</label>
-                <input class="logininput" type="text" class="login" name="username" id="username">
+                <label class="loginlabel" for="loginusername">Korisničko ime:</label>
+                <input class="logininput" type="text" class="login" name="username" id="loginusername">
                 <br/>
-                <label class="loginlabel" for="password">Lozinka:</label>
-                <input class="logininput" type="password" class="login" name="password" id="password">
+                <label class="loginlabel" for="loginpassword">Lozinka:</label>
+                <input class="logininput" type="password" class="login" name="password" id="loginpassword">
                 <br/>
                 <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
                 <input type="submit" value="Ulogujte se">
@@ -36,16 +36,16 @@
         </div>
         <div id="main">
             <h2>Izmena korisnika</h2>
-            <form method="post">
+            <form id="userform" method="post">
                 <div class="forms">
                     <label for="username">Korisničko ime: </label>
-                    <input type="text" name="username" id="username" value="petar_p" readonly>
+                    <input type="text" name="username" id="username">
                     <br/>
                     <label for="password">Lozinka: </label>
                     <input type="text" name="password" id="password">
                     <br/>
                     <label for="name">Ime: </label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="humanname">
                     <br/>
                     <label for="lastname">Prezime: </label> 
                     <input type="text" name="lastname" id="lastname">
@@ -60,7 +60,7 @@
                     <input type="date" name="date" id="date">
                     <br/>
                     <label for="address">Adresa: </label>
-                    <input type="text" name="address" id="date">
+                    <input type="text" name="address" id="address">
                     <br/>
                     <label for="number">Broj telefona: </label>
                     <input type="text" name="number" id="number">
@@ -73,5 +73,6 @@
             </form>
         </div>
         <script src="../scripts/basescript.js"></script>
+        <script src="../scripts/usersformscript.js"></script>
     </body>
 </html>

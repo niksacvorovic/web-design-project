@@ -6,7 +6,7 @@ request.onreadystatechange = function() {
     let data = JSON.parse(request.responseText);
     let tbody = document.getElementsByTagName("tbody");
     let subtitle = document.getElementById("subtitle");
-    subtitle.innerHTML = "Prikaz festivala organizatora " + params.get("org") + " u sistemu";
+    subtitle.innerHTML = "Prikaz festivala organizatora " + params.get("orgname") + " u sistemu";
     for(var instance in data){
         let entity = data[instance];
         console.log(entity);
@@ -36,7 +36,7 @@ request.onreadystatechange = function() {
         }
         let change = document.createElement("td");
         let changelink = document.createElement("a");
-        changelink.setAttribute("href", "festsform.html?org=" + instance);
+        changelink.setAttribute("href", "festsform.html?org=" + params.get("orgkey") +"&fest=" + instance);
         changelink.innerHTML = "Izmenite";
         change.appendChild(changelink);
         row.appendChild(change);
@@ -51,5 +51,5 @@ request.onreadystatechange = function() {
         tbody[0].appendChild(row);
     }
 }
-request.open("GET", url + "/festivali/" + params.get("fest") +".json");
+request.open("GET", url + "/festivali/" + params.get("orgkey") +".json");
 request.send();

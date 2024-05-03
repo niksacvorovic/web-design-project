@@ -24,11 +24,11 @@
         <div id="popup">
             <button id="close">X</button>
             <form method="post">
-                <label class="loginlabel" for="username">Korisničko ime:</label>
-                <input class="logininput" type="text" class="login" name="username" id="username">
+                <label class="loginlabel" for="loginusername">Korisničko ime:</label>
+                <input class="logininput" type="text" class="login" name="username" id="loginusername">
                 <br/>
-                <label class="loginlabel" for="password">Lozinka:</label>
-                <input class="logininput" type="password" class="login" name="password" id="password">
+                <label class="loginlabel" for="loginpassword">Lozinka:</label>
+                <input class="logininput" type="password" class="login" name="password" id="loginpassword">
                 <br/>
                 <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
                 <input type="submit" value="Ulogujte se">
@@ -36,21 +36,21 @@
         </div>
         <div id="main">
             <h2>Uređenje organizatora festivala</h2>
-            <form>
+            <form id="orgform">
                 <div class="forms">
                     <label for="name">Naziv: </label>
-                    <input type="text" name="name" id="name" value="BeoArt Fest" readonly>
+                    <input type="text" name="name" id="orgname">
                     <br/>
                     <label for="address">Adresa: </label>
                     <input type="text" name="address" id="address">
                     <br/>
-                    <label for="year">Godina osnivanja: </label>
+                    <label for="year">Osnovana: </label>
                     <input type="text" name="year" id="year">
                     <br/>
                 </div>
                 <div class="forms">
                     <label for="logo">Logo: </label>
-                    <input type="file" name="logo" id="logo">
+                    <input type="url" name="logo" id="logo" placeholder="Unesite link">
                     <br/>
                     <label for="email">Email: </label>
                     <input type="email" name="email" id="email">
@@ -63,5 +63,6 @@
             </form>
         </div>
         <script src="../scripts/basescript.js"></script>
+        <script src="../scripts/orgsformscript.js"></script>
     </body>
 </html>

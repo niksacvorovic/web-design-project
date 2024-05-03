@@ -24,11 +24,11 @@
         <div id="popup">
             <button id="close">X</button>
             <form method="post">
-                <label class="loginlabel" for="username">Korisničko ime:</label>
-                <input class="logininput" type="text" class="login" name="username" id="username">
+                <label class="loginlabel" for="loginusername">Korisničko ime:</label>
+                <input class="logininput" type="text" class="login" name="username" id="loginusername">
                 <br/>
-                <label class="loginlabel" for="password">Lozinka:</label>
-                <input class="logininput" type="password" class="login" name="password" id="password">
+                <label class="loginlabel" for="loginpassword">Lozinka:</label>
+                <input class="logininput" type="password" class="login" name="password" id="loginpassword">
                 <br/>
                 <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
                 <input type="submit" value="Ulogujte se">
@@ -36,17 +36,17 @@
         </div>
         <div id="main">
             <h2>Uređenje festivala korisnika BeoArt Fest</h2>
-            <form>
+            <form id="festform">
                 <div class="forms">
                     <label for="name">Naziv festivala: </label>
-                    <input type="text" name="name" id="name" value="Festival Ostrvske Muzike" read>
+                    <input type="text" name="name" id="festname" value="Festival Ostrvske Muzike" read>
                     <br/>
                     <label for="desc">Opis: </label>
                     <br/>
                     <textarea name="desc" id="desc"></textarea>
                     <br/>
                     <label for="images">Slike: </label> 
-                    <input type="file" name="images" id="images">
+                    <input type="link" name="images" id="images" placeholder="Unesite linkove odvojene zarezom">
                     <br/>
                 </div>
                 <div class="forms">
@@ -59,7 +59,7 @@
                     <label for="price">Cena: </label>
                     <input type="text" name="price" id="price">
                     <br/>
-                    <label for="max">Maksimalno osoba: </label>
+                    <label for="max">Maks. osoba: </label>
                     <input type="text" name="max" id="max">
                     <br/>
                 </div>
@@ -67,5 +67,6 @@
             </form>
         </div>
         <script src="../scripts/basescript.js"></script>
+        <script src="../scripts/festsformscript.js"></script>
     </body>
 </html>

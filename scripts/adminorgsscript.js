@@ -21,7 +21,7 @@ request.onreadystatechange = function() {
             }
             else if (i == 6){
                 let festlink = document.createElement("a");
-                festlink.setAttribute("href", "adminfests.html?org=" + entity.naziv + "&fest=" + arr[i])
+                festlink.setAttribute("href", "adminfests.html?orgname=" + entity.naziv + "&orgkey=" + arr[i])
                 festlink.innerHTML = "Prikaz";
                 field.appendChild(festlink);
             }
