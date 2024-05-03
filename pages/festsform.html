@@ -30,16 +30,16 @@
                 <label class="loginlabel" for="loginpassword">Lozinka:</label>
                 <input class="logininput" type="password" class="login" name="password" id="loginpassword">
                 <br/>
-                <p>Nemate nalog? <a href="../pages/usersform.html">Registrujte se</a></p>
+                <p>Nemate nalog? <a href="../pages/usersform.html?user=new">Registrujte se</a></p>
                 <input type="submit" value="Ulogujte se">
             </form>
         </div>
         <div id="main">
-            <h2>Uređenje festivala korisnika BeoArt Fest</h2>
+            <h2 id="formtitle">Dodavanje novog festivala organizatora</h2>
             <form id="festform">
                 <div class="forms">
                     <label for="name">Naziv festivala: </label>
-                    <input type="text" name="name" id="festname" value="Festival Ostrvske Muzike" read>
+                    <input type="text" name="name" id="festname">
                     <br/>
                     <label for="desc">Opis: </label>
                     <br/>
@@ -50,7 +50,7 @@
                     <br/>
                 </div>
                 <div class="forms">
-                    <label for="type">Email: </label>
+                    <label for="type">Tip festivala: </label>
                     <input type="text" name="type" id="type">
                     <br/>
                     <label for="transport">Prevoz: </label>

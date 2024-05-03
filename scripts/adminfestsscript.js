@@ -2,14 +2,15 @@ const main = document.getElementById("main");
 const url = "https://web-design-data-a605e-default-rtdb.firebaseio.com";
 const params = new URLSearchParams(window.location.search);
 const request = new XMLHttpRequest();
-request.onreadystatechange = function() {
+request.onload = function() {
     let data = JSON.parse(request.responseText);
     let tbody = document.getElementsByTagName("tbody");
     let subtitle = document.getElementById("subtitle");
+    let add = document.getElementById("add");
+    add.setAttribute("href", "festsform.html?orgname=" + params.get("orgname") + "&orgkey=" + params.get("orgkey"));
     subtitle.innerHTML = "Prikaz festivala organizatora " + params.get("orgname") + " u sistemu";
     for(var instance in data){
         let entity = data[instance];
-        console.log(entity);
         let row = document.createElement("tr");
         let arr = [entity.naziv, entity.opis, entity.slike, entity.tip, entity.prevoz, entity.cena, entity.maxOsoba];
         for(let i = 0; i < arr.length; i++){
@@ -34,19 +35,24 @@ request.onreadystatechange = function() {
             }
             row.appendChild(field);
         }
-        let change = document.createElement("td");
-        let changelink = document.createElement("a");
-        changelink.setAttribute("href", "festsform.html?org=" + params.get("orgkey") +"&fest=" + instance);
-        changelink.innerHTML = "Izmenite";
-        change.appendChild(changelink);
-        row.appendChild(change);
         let todelete = document.createElement("td");
         let deletelink = document.createElement("a");
         deletelink.innerHTML = "Obrišite";
+        deletelink.setAttribute("data", url + "/festivali/" + params.get("orgkey") + "/" + instance + ".json");
         todelete.appendChild(deletelink);
         deletelink.addEventListener("click", function(e){
-            window.confirm("Da li ste sigurni da želite da obrišete " + row.children[0].innerHTML + " iz sistema?");
-        })
+            let bool = window.confirm("Da li ste sigurni da želite da obrišete " + row.children[0].innerHTML + " iz sistema?");
+            if(bool){
+                let deleteRequest = new XMLHttpRequest();
+                deleteRequest.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200){
+                        location.reload();
+                    }
+                }
+                deleteRequest.open("DELETE", deletelink.getAttribute("data"));
+                deleteRequest.send();
+            }
+        });
         row.appendChild(todelete);
         tbody[0].appendChild(row);
     }

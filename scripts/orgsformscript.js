@@ -4,15 +4,14 @@ const params = new URLSearchParams(window.location.search);
 const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
-        let data = JSON.parse(request.responseText);
-        let name = document.getElementById("orgname");
+        data = JSON.parse(request.responseText);
+        let orgname = document.getElementById("orgname");
         let address = document.getElementById("address");
         let year = document.getElementById("year");
         let logo = document.getElementById("logo");
         let email = document.getElementById("email");
         let number = document.getElementById("number");
-        name.setAttribute("value", data.naziv);
-        name.setAttribute("readonly", true);
+        orgname.setAttribute("value", data.naziv);
         address.setAttribute("value", data.adresa);
         year.setAttribute("value", data.godinaOsnivanja);
         logo.setAttribute("value", data.logo);
@@ -27,9 +26,25 @@ form.addEventListener("submit", function(e){
     let phonenumregex = new RegExp("^[0-9]{3}\/[0-9]{3,4}-[0-9]{3,4}$");
     let yearregex = new RegExp("^[0-9]{4}$");
     let linkregex = new RegExp("^(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?$");
-    if(emailregex.test(email.value) && phonenumregex.test(number.value) && yearregex.test(year.value) && linkregex.test(logo.value))
+    if(orgname.value != "" && address.value != "" && emailregex.test(email.value) &&
+    phonenumregex.test(number.value) && yearregex.test(year.value) && linkregex.test(logo.value))
     {
-        alert("Podaci su uspešno poslati!");
+        let neworg = new Object();
+        neworg.naziv = orgname.value;
+        neworg.adresa = address.value;
+        neworg.godinaOsnivanja = year.value;
+        neworg.logo = logo.value;
+        neworg.kontaktTelefon = number.value;
+        neworg.email = email.value;
+        neworg.festivali = data.festivali;
+        putRequest = new XMLHttpRequest();
+        putRequest.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                window.location.href = "adminorgs.html";
+            }
+        }
+        putRequest.open("PUT", url + "/organizatoriFestivala/" + params.get("org") + ".json");
+        putRequest.send(JSON.stringify(neworg));
     }
     else
     {

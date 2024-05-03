@@ -30,3 +30,15 @@ td a{
 .wrap{
     text-wrap:wrap;
 }
+
+#add{
+    display:inline-block;
+    padding:1em;
+    color:white;
+    text-shadow: 1px 0px black;
+    text-decoration: none;
+}
+
+#add:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}

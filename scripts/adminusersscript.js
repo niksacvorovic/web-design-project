@@ -26,9 +26,20 @@ request.onreadystatechange = function() {
             let todelete = document.createElement("td");
             let deletelink = document.createElement("a");
             deletelink.innerHTML = "Obrišite";
+            deletelink.setAttribute("data", url + "/korisnici/" + values + ".json")
             todelete.appendChild(deletelink);
             deletelink.addEventListener("click", function(e){
-                window.confirm("Da li ste sigurni da želite da obrišete korisnika " + row.children[0].innerHTML + " iz sistema?");
+                let bool = window.confirm("Da li ste sigurni da želite da obrišete korisnika " + row.children[0].innerHTML + " iz sistema?");
+                if(bool){
+                    let deleteRequest = new XMLHttpRequest();
+                    deleteRequest.onreadystatechange = function() {
+                        if(this.readyState == 4 && this.status == 200){
+                            location.reload();
+                        }
+                    }
+                    deleteRequest.open("DELETE", deletelink.getAttribute("data"));
+                    deleteRequest.send();
+                }
             })
             row.appendChild(todelete);
             tbody[0].appendChild(row);
