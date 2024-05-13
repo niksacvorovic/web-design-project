@@ -6,12 +6,12 @@ table{
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    border: 3px solid chartreuse;
+    border: 3px solid gold;
     border-collapse: collapse;
 }
 
 th, td{
-    border: 1px solid chartreuse;
+    border: 1px solid gold;
     border-collapse: collapse;
     padding-left: 1vh;
     padding-right: 1vh;

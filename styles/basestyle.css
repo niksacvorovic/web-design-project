@@ -3,7 +3,8 @@ html{
 }
 
 body{
-    background-image: linear-gradient( to bottom left, violet, blue);
+    /*background-image: linear-gradient( to bottom left, violet, blue);*/
+    background-color: rgba(0, 0, 255, 0.7);
     padding-bottom: 2%;
     background-attachment: fixed;
     font-family:"Oswald";
@@ -11,6 +12,7 @@ body{
     font-size:18px;
     color:white;
     text-shadow: 1px 0px black;
+    letter-spacing: 0.5px;
 }
 
 header{
@@ -93,13 +95,13 @@ div h2{
 
 a{
     font-weight: bold;
-    color:navy;
+    color:gold;
     text-decoration: underline;
-    text-shadow: none;
+    text-shadow:1px 0px black;
 }
 
 a:hover{
-    color:navy;
+    color:gold;
     text-decoration:none;
 }
 
@@ -125,8 +127,8 @@ button{
 
 #popup{
     display:none;
-    background-color: rgba(255, 255, 255, 0.7);
-    color:black;
+    background-color: rgba(0, 0, 0, 0.7);
+    color:white;
     text-shadow:none;
     position:fixed;
     top:30vh;

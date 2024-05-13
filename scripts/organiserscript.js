@@ -53,6 +53,8 @@ request1.onreadystatechange = function (){
                     festlink.appendChild(linktext);
                     row.appendChild(festlink)
                 }
+                let table = document.getElementById("festtable");
+                table.style.display = "table";
             }
         }
         request2.open("GET", url + "/festivali/" + data.festivali + ".json");

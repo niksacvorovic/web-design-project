@@ -8,7 +8,7 @@
         <link href="../styles/festivalstyle.css" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -45,6 +45,30 @@
             <p>Pogledajte neke od slika sa prošlogodišnjeg izdanja ovog fantastičnog festivala: </p>
             <div id="gallery">
             </div>
+            <p>Ne sviđa Vam se ovaj festival? Pretražite festivale u našoj bazi podataka!</p>
+            <div id="search">
+                <label for="festname">Naziv festivala: </label>
+                <input type="text" id="festname" placeholder="Unesite naziv ili deo naziva">
+                <label for="festtypes">Tip festivala: </label>
+                <select id="festtypes">
+                    <option value="" hidden></option>
+                    <option value="Muzički">Muzički</option>
+                    <option value="Umetnički">Umetnički</option>
+                    <option value="Filmski">Filmski</option>
+                    <option value="Gastronomski">Gastronomski</option>
+                    <option value="Edukativni">Edukativni</option>
+                </select>
+                <button id="searchbtn">Pretražite</button>
+            </div>
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>Naziv festivala</th><th class="mobileno">Cena aranžmana</th><th class="mobileno">Tip festivala</th><th>Stranica festivala</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
         </div>
         <script src="../scripts/basescript.js"></script>
         <script src="../scripts/festivalscript.js"></script>

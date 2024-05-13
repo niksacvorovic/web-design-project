@@ -12,6 +12,16 @@ request.onreadystatechange = function(){
                     createCard(entity);
                 }
             }
+            let highlight = document.getElementsByClassName("orgname");
+            for(var item of highlight){
+                let orgname = item.innerHTML.substr(7);
+                let marked = "<mark>" + params.get("query") + "</mark>";
+                let captquery = params.get("query").charAt(0).toUpperCase() + params.get("query").slice(1);
+                let markedcapt = "<mark>" + captquery + "</mark>";
+                let neworgname = orgname.replaceAll(params.get("query"), marked);
+                neworgname = neworgname.replaceAll(captquery, markedcapt)
+                item.innerHTML = "Naziv: " + neworgname;
+            }
         }else{
             for(var entity in organisers){
                 createCard(entity);
@@ -45,6 +55,7 @@ function createCard(entity){
     list.setAttribute("class", "list");
     div.appendChild(list);
     let name = document.createElement("li");
+    name.setAttribute("class", "orgname")
     name.innerHTML = "Naziv: " + data.naziv;
     list.appendChild(name);
     let address = document.createElement("li");

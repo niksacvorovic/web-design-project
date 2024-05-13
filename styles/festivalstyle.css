@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+#results{
+    display:none;
+}
+
 @media only screen and (max-width:1280px){
     .galleryitem{
         width:40%;
@@ -19,6 +23,27 @@
         width: 90%;
         margin: 2%;
     }
+    #search>input, select{
+        width:95%;
+    }
+}
+
+@media only screen and (max-width:550px){
+    .mobileno{
+        display:none;
+    }
+}
+
+table, td, th{
+    margin-left:auto;
+    margin-right:auto;
+    border: 3px solid gold;
+    border-collapse: collapse;
+    padding-left:3vh;
+    padding-right:3vh;
+    padding-top:1vh;
+    padding-bottom:1vh;
+    text-align: center;
 }
 
 img{
@@ -30,4 +55,21 @@ img{
 
 #info{
     list-style-type:unset;
+}
+
+button{
+    padding:1ex;
+    font-size: 16px;
+    padding-left:2em;
+    padding-right:2em;
+    margin:0;
+    margin-top:1em;
+}
+
+input, select{
+    background-color: white;
+    padding:1vh;
+    border: 0;
+    margin:1em;
+    margin-left:0;
 }
