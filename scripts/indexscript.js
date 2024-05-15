@@ -5,6 +5,9 @@ const params = new URLSearchParams(window.location.search);
 request.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         organisers = JSON.parse(request.responseText);
+        if(organisers == null){
+            window.location.href = "error.html"
+        }
         if(params.has("query")){
             for(var entity in organisers){
                 let check = organisers[entity].naziv;

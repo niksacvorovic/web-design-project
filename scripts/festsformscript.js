@@ -30,6 +30,8 @@ form.addEventListener("submit", function(e){
         postRequest.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
                 window.location.href = "adminfests.html?orgname=" + params.get("orgname") + "&orgkey=" + params.get("orgkey");
+            }else if(this.readyState == 4 && this.status >= 400){
+                window.location.href = "error.html"
             }
         }
         postRequest.open("POST", url + "/festivali/" + params.get("orgkey") + ".json");

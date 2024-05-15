@@ -5,6 +5,9 @@ const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
         data = JSON.parse(request.responseText);
+        if(data == null){
+            window.location.href = "error.html"
+        }
         let orgname = document.getElementById("orgname");
         let address = document.getElementById("address");
         let year = document.getElementById("year");
@@ -41,6 +44,8 @@ form.addEventListener("submit", function(e){
         putRequest.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
                 window.location.href = "adminorgs.html";
+            }else if(this.status >= 400){
+                window.location.href = "error.html"
             }
         }
         putRequest.open("PUT", url + "/organizatoriFestivala/" + params.get("org") + ".json");

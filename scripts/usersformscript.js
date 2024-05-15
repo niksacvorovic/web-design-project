@@ -15,6 +15,9 @@ let job = document.getElementById("job");
 request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200 && params.get("user") != "new"){
         let data = JSON.parse(request.responseText);
+        if(data == null){
+            window.location.href = "error.html"
+        }
         document.getElementById("formtitle").innerHTML = "Izmena korisnika";
         submitbtn.setAttribute("value", "Izmenite");
         username.setAttribute("value", data.korisnickoIme);
@@ -27,6 +30,8 @@ request.onreadystatechange = function() {
         address.setAttribute("value", data.adresa);
         number.setAttribute("value", data.telefon);
         job.setAttribute("value", data.zanimanje);
+    }else if(this.status >= 400){
+        window.location.href = "error.html"
     }
 }
 const form = document.getElementById("userform");
@@ -54,6 +59,8 @@ form.addEventListener("submit", function(e){
             postRequest.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200){
                     window.location.href = "index.html";
+                }else if(this.status >= 400){
+                    window.location.href = "error.html"
                 }
             }
             postRequest.open("POST", url + "/korisnici.json");
@@ -64,6 +71,8 @@ form.addEventListener("submit", function(e){
             putRequest.onreadystatechange = function(){
                 if (this.readyState == 4 && this.status == 200){
                     window.location.href = "index.html";
+                }else if(this.status >= 400){
+                    window.location.href = "error.html"
                 }
             }
             putRequest.open("PUT", url + "/korisnici/" + params.get("user") +".json");

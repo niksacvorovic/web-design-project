@@ -6,6 +6,9 @@ const request2 = new XMLHttpRequest();
 request1.onreadystatechange = function (){
     if (this.readyState == 4 && this.status == 200){
         data = JSON.parse(request1.responseText);
+        if(data == null){
+            window.location.href = "error.html";
+        }
         let title = document.getElementsByTagName("title");
         title[0].innerHTML = data.naziv;
         let imagediv = document.getElementById("imagediv");
@@ -30,6 +33,9 @@ request1.onreadystatechange = function (){
         request2.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200){
                 tabledata = JSON.parse(request2.responseText);
+                if(tabledata == null){
+                    window.location.href = "error.html";
+                }
                 let tbody = document.getElementById("tbody");
                 for(var festival in tabledata){
                     i = tabledata[festival];

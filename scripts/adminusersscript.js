@@ -4,6 +4,9 @@ const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
         users = JSON.parse(request.responseText);
+        if(users == null){
+            window.location.href = "error.html"
+        }
         let tbody = document.getElementsByTagName("tbody");
         for(var values in users){
             userdata = users[values];
@@ -35,6 +38,8 @@ request.onreadystatechange = function() {
                     deleteRequest.onreadystatechange = function() {
                         if(this.readyState == 4 && this.status == 200){
                             location.reload();
+                        }else if(this.readyState == 4 && this.status >= 400){
+                            window.location.href = "error.html"
                         }
                     }
                     deleteRequest.open("DELETE", deletelink.getAttribute("data"));
