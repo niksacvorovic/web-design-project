@@ -61,10 +61,14 @@ request1.onreadystatechange = function (){
                 }
                 let table = document.getElementById("festtable");
                 table.style.display = "table";
+            }else if(this.readyState == 4 && this.status >= 400){
+                window.location.href = "error.html"
             }
         }
         request2.open("GET", url + "/festivali/" + data.festivali + ".json");
         request2.send();
+    }else if(this.readyState == 4 && this.status >= 400){
+        window.location.href = "error.html"
     }
 }
 request1.open("GET", url + "/organizatoriFestivala/" + params.get("org") + ".json");

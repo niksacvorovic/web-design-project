@@ -62,6 +62,8 @@ request.onreadystatechange = function() {
             row.appendChild(todelete);
             tbody[0].appendChild(row);
         }
+    }else if(this.readyState == 4 && this.status >= 400){
+        window.location.href = "error.html"
     }
 }
 request.open("GET", url + "/festivali/" + params.get("orgkey") +".json");

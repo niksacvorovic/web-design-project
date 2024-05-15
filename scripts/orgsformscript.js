@@ -20,6 +20,8 @@ request.onreadystatechange = function() {
         logo.setAttribute("value", data.logo);
         email.setAttribute("value", data.email);
         number.setAttribute("value", data.kontaktTelefon);
+    }else if(this.readyState == 4 && this.status >= 400){
+        window.location.href = "error.html"
     }
 }
 const form = document.getElementById("orgform");

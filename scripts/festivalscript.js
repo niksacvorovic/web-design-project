@@ -86,12 +86,16 @@ request.onreadystatechange = function() {
                         }
                     }
                     results.style.display = "table";
+                }else if(this.readyState == 4 && this.status >= 400){
+                    window.location.href = "error.html"
                 }
             }
             queryrequest.open("GET", url + "/festivali.json");
             queryrequest.send();
         }
-    }      
+    }else if(this.readyState == 4 && this.status >= 400){
+        window.location.href = "error.html"
+    }
 }
 const searchbtn = document.getElementById("searchbtn");
 const festname = document.getElementById("festname");

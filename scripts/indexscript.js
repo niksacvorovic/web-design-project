@@ -30,6 +30,8 @@ request.onreadystatechange = function(){
                 createCard(entity);
             }
         }
+    }else if(this.readyState == 4 && this.status >= 400){
+        window.location.href = "error.html"
     }
 }
 const searchbtn = document.getElementById("searchbtn");
